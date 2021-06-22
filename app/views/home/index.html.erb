@@ -1,11 +1,22 @@
+<div data-controller="box switch"
+  data-box-blue-class="bg-blue-500"
+  data-box-red-class="bg-red-500"
+  data-box-color-value="blue">
 
-<div class="bg-blue-500 border-b py-8 m-8 justify-center">
-</div>
+  <%= render partial: "message", locals: { message: '' } %>
+  
+  <div id="box" data-box-target="box" class="h-16 w-16 bg-blue-500 m-2"></div>
+  
+  <button id="switch"
+    class="rounded bg-green-500 hover:bg-green-800 text-white p-2 m-2"
+    data-switch-target="switch"
+    data-action="click->switch#toggle">
+    Click me
+  </button>
+  
+  <form action="/home" method="post">
+    <input id="box-color" name="color" type="text" value="blue" data-switch-target="color" data-action="change->box#toggle" />
+    <input type="submit" value="Submit" class="rounded bg-green-500 hover:bg-green-800 text-white p-2 m-2" />
+  </form>
 
-<div data-controller= "blueclick">
-<div class="min-h-screen flex flex-col justify-center">   
-    <div class="sm:mx-auto">
-        <button data-action= "blueclick#new" class="py-4 px-8 bg-blue-500 rounded-xl text-white uppercase font-semibold shadow-lg">Click Me</button>
-    </div>
-</div> 
 </div>
