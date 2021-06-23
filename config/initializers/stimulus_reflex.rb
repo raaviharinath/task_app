@@ -3,6 +3,9 @@
 StimulusReflex.configure do |config|
   # Enable/disable exiting / warning when the sanity checks fail options:
   # `:exit` or `:warn` or `:ignore`
+ StimulusReflex.configure do |config|
+    config.on_failed_sanity_checks = :warn
+  end
 
   # config.on_failed_sanity_checks = :exit
 
